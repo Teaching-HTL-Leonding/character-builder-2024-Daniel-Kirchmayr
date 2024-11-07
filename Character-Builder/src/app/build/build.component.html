@@ -1,0 +1,38 @@
+<form (submit)="BuildCharacter()">
+  <label for="eye">Eye:</label>
+  <select id="eye" name="eye" [(ngModel)]="eye">
+    <option value="NoEye">No Eye</option>
+    <option value="HalfOpen">Half Open</option>
+    <option value="Closed">Closed</option>
+    <option value="Open">Open</option>
+  </select>
+
+  <label for="hasHammer">Has Hammer</label>
+  <input type="checkbox" id="hasHammer" name="hasHammer" [(ngModel)]="hasHammer">
+
+  <label for="mouth">Mouth:</label>
+  <select name="mouth" id="mouth" [(ngModel)]="mouth">
+    <option value="Normal">Normal</option>
+    <option value="NoMouth">No Mouth</option>
+    <option value="Happy">Happy</option>
+    <option value="Unhappy">Unhappy</option>
+  </select>
+
+  <label for="rightHand">Right Hand:</label>
+  <select name="rightHand" id="rightHand" [(ngModel)]="rightHand">
+    <option value="NoHand">No Hand</option>
+    <option value="Normal">Normal</option>
+    <option value="Victory">Victory</option>
+  </select>
+
+  <label for="hasTail">Has Tail</label>
+  <input type="checkbox" id="hasTail" name="hasTail" [(ngModel)]="hasTail">
+
+  <button type="submit">Build image</button>
+  <button type="button" (click)="Randomize()">Randomize</button>
+</form>
+
+<div *ngIf="imageUrl()">
+  <img [src]="imageUrl()" alt="Character Image">
+</div>
+
